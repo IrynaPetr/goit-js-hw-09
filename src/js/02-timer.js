@@ -26,11 +26,14 @@ const options = {
     if(selectedDates[0] < new Date()) {
       Notify.failure("Please choose a date in the future");
       btnStart.disabled = true;
-     
+      timer.stop() 
     } else {
      btnStart.disabled = false;
      userSelectDate = selectedDates[0];}
-  }}
+  }};
+
+ 
+
     const timer = {
   intervalId: null,
   isActive: false,
@@ -47,7 +50,16 @@ const options = {
       const timeComponents = convertMs(deltaTime);
       updateClockFace(timeComponents);
      console.log(timeComponents);
-    }, 1000); }
+    }, 1000); },
+    stop()  {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+      this.isActive = false;
+      daysEl.textContent = '00';
+  hoursEl.textContent = '00';
+  minutesEl.textContent = '00';
+  secondsEl.textContent = '00';
+    },
   
 }
 

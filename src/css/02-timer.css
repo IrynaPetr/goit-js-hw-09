@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(156, 211, 211);
+}
+
+.timer {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.1429;
+  letter-spacing: 0.02em;
+margin-top: 20px;
+margin-left: 250px;
+margin-right: 250px;
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.flatpickr-input {
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 20px auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgb(28, 50, 27);
+    background-color: rgb(113, 226, 117);
+    cursor: pointer;
+    min-width: 73px;
+    height: 38px;
+    border-radius: 4px;
+    border-color: rgb(9, 17, 13);
+
+    padding: 6px 22px;
+}
