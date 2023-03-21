@@ -47,11 +47,22 @@ const options = {
     this.intervalId = setInterval(() => {
       const currentTime = Date.now();
       const deltaTime = userSelectDate - currentTime;
+      if (deltaTime <= 0 ) {
+        clearInterval(this.intervalId);
+        this.isActive = false;
+        return;
+      }
+
       const timeComponents = convertMs(deltaTime);
       updateClockFace(timeComponents);
      console.log(timeComponents);
-    }, 1000); },
-    stop()  {
+    
+    }, 1000); 
+    },
+    stop()  { 
+      const currentTime = Date.now();
+      const deltaTime = userSelectDate - currentTime;
+      const timeComponents = convertMs(deltaTime);
       clearInterval(this.intervalId);
       this.intervalId = null;
       this.isActive = false;
@@ -59,6 +70,10 @@ const options = {
   hoursEl.textContent = '00';
   minutesEl.textContent = '00';
   secondsEl.textContent = '00';
+  if (deltaTime <= 0 ) {
+    clearInterval(this.intervalId);
+    return;
+  }
     },
   
 }
